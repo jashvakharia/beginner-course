@@ -2,6 +2,10 @@
 
 **Coding Journey Guide** is a beginner's guide to programming, offering a structured, easy-to-navigate page with essential resources, learning paths, beginner project ideas, salary information, and links to developer tools. It provides a helpful starting point for aspiring developers.
 
+## Live Site
+
+**This is the live page**: **https://beginner-course.onrender.com/**
+
 ## Table of Contents
 
 - [Overview](#overview)
