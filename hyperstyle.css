@@ -1,0 +1,295 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #818cf8;
+    --background: #f8fafc;
+    --card-bg: white;
+    --text: #1e293b;
+    --code-bg: #f1f5f9;
+    --font-main: 'Google Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+}
+a:link {
+    color:#FFFFFF;
+}
+
+a:visited {
+    color:#FFFFFF;
+}
+
+a:hover {
+    color:#FFFFFF;
+}
+
+[data-theme="dark"] {
+    --primary: #818cf8;
+    --secondary: #6366f1;
+    --background: #1e293b;
+    --card-bg: #2d3748;
+    --text: #f8fafc;
+    --code-bg: #4a5568;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: -0.02em;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    border-radius: 0 0 2rem 2rem;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.03em;
+}
+
+header p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.theme-switch {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: white;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.horizontal-card {
+    margin-top: var(--spacing-xl);
+}
+
+.salary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-md);
+}
+
+.salary-section {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: var(--spacing-md);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-sm);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.7;
+}
+
+li ul, li ol {
+    margin-left: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+code {
+    background: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.salary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-xs) 0;
+    font-size: 0.95rem;
+}
+
+.salary-table th, .salary-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border: 1px solid var(--primary);
+}
+
+.salary-table th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.salary-note {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: var(--spacing-sm);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 1.5rem;
+        --spacing-lg: 1rem;
+        --spacing-md: 0.75rem;
+    }
+
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .salary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
